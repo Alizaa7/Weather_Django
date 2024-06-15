@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="{% static 'app.css' %}">
+<head>
+    <title>Weatherhood</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .weather, .forecast { margin: 20px 0; }
+        .container { max-width: 600px; margin: auto; padding: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Weatherhood</h1>
+        <form method="get" action="" class="form-inline justify-content-center">
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" name="city" class="form-control" placeholder="Enter city" required>
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Get Weather</button>
+        </form>
+
+        {% if weather %}
+            <div class="weather">
+                <h2>{{ weather.name }}</h2>
+                <p>
+                    <img src="http://openweathermap.org/img/wn/{{ weather.weather.0.icon }}@2x.png" alt="{{ weather_data.description }}">
+                </p>
+                
+
+                <h2><strong></strong> {{ weather.main.temp|floatformat:"0"  }} &deg;C</h2>
+                <br>
+                
+                
+                
+                <div class="con">
+                <p class="hum"><strong>Humidity:</strong> {{ weather.main.humidity }}%
+                <p class="win"><strong>Wind Speed:</strong> {{ weather.wind.speed }} m/s</strong></p>
+                </div>
+            </div>
+            <div class="forecast">
+                <h2>5-Day Forecast</h2>
+                <div class="list-group">
+                    {% for forecast in forecast.list %}
+                        <div class="list-group-item">
+                            <p><strong>{{ forecast.dt_txt}}</strong></p>
+                            <p><img src="http://openweathermap.org/img/wn/{{ forecast.weather.0.icon }}@2x.png" alt="{{ forecast.description }}">
+                            <p><strong>{{forecast.weather.0.main}}</strong></p>
+                            <p ><strong>{{ forecast.main.temp }} &deg;C</strong></p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

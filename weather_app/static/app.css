@@ -1,0 +1,178 @@
+/* app.css */
+
+/* General styling for body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8faf8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Center container and add padding */
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 10px;
+    background-color: #344861;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.container:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the heading */
+.text-center {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Styling for the form */
+form {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+form .form-group {
+    margin-right: 10px;
+}
+
+form .form-control {
+    border-radius: 30px;
+    font-size: 1.3em;
+    width: 100%;
+    padding: 20px 10px;
+    border: 1px solid #ced4da;
+    transition: border-color 0.3s ease-in-out;
+}
+
+
+
+form .form-control:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+form .btn {
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 10px 20px;
+    background-color: #ffa652;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+form .btn:hover {
+    background-color: #cd6403;
+}
+
+/* Weather section styling */
+.weather {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #007bff;
+    border-radius: 30px;
+    background-image: linear-gradient(#98daf8,#27b9e5,#2b5ccf);
+    transition: background-image 0.3s ease-in-out;
+    
+}
+
+.weather:hover {
+    background-image: #c7f2f6;
+}
+
+.weather h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.weather .con{
+    margin-top: 10px;
+    justify-content: space-between;
+    display: flex;
+}
+
+
+.weather p {
+    font-size: 1.2em;
+    margin: 5px 0;
+    text-align: center;
+    color: #fff;
+}
+
+/* Forecast section styling */
+.forecast {
+    margin: 20px 0;
+}
+
+.forecast h2 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+
+.forecast .p{
+    font-weight: bold;
+}
+
+.forecast .list-group-item {
+    margin-bottom: 10px;
+    padding: 15px;
+    background-image:linear-gradient(#aaebee,#6d77a8);
+    border-radius: 30px;
+    border: 1px solid #007bff;
+    transition: background-color 0.3s ease-in-out;
+    
+}
+
+.forecast .list-group-item:hover {
+    background-color: #c7f2f6;
+}
+
+.forecast .list-group-item p {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+/* Additional styles for better readability */
+p strong {
+    color: #fff;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    form .form-group {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    form .form-control, form .btn {
+        width: 100%;
+    }
+}
