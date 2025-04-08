@@ -1,178 +1,186 @@
-/* app.css */
-
-/* General styling for body */
+/* Reset and base styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8faf8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #eef2f3;
     margin: 0;
     padding: 0;
-    color: #333;
+    color: #2d2d2d;
 }
 
-/* Center container and add padding */
+/* Container Styling */
 .container {
-    max-width: 600px;
-    margin: auto;
-    padding: 10px;
-    background-color: #344861;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 30px;
-    transition: box-shadow 0.3s ease-in-out;
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 30px 25px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-.container:hover {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Styling for the heading */
+/* Title */
 .text-center {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-    font-size: 2.5em;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #ffffff;
-    text-align: center;
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #344861;
+    margin-bottom: 30px;
 }
 
-/* Styling for the form */
+/* Form styling */
 form {
-    margin-bottom: 20px;
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     justify-content: center;
-    
+    margin-bottom: 30px;
 }
 
-form .form-group {
-    margin-right: 10px;
+.form-control {
+    padding: 12px 15px;
+    font-size: 1.1em;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    width: 60%;
+    transition: border-color 0.3s ease;
 }
 
-form .form-control {
-    border-radius: 30px;
-    font-size: 1.3em;
-    width: 100%;
-    padding: 20px 10px;
-    border: 1px solid #ced4da;
-    transition: border-color 0.3s ease-in-out;
-}
-
-
-
-form .form-control:focus {
-    border-color: #007bff;
+.form-control:focus {
+    border-color: #4a90e2;
     outline: none;
 }
 
 form .btn {
-    font-size: 1em;
-    font-weight: bold;
-    border-radius: 30px;
-    padding: 10px 20px;
-    background-color: #ffa652;
+    padding: 12px 25px;
+    background: #4a90e2;
     border: none;
-    color: #ffffff;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 12px;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    transition: background 0.3s ease;
 }
 
 form .btn:hover {
-    background-color: #cd6403;
+    background: #357ab8;
 }
 
-/* Weather section styling */
+/* Weather Section */
 .weather {
-    margin: 20px 0;
-    padding: 15px;
-    border: 1px solid #007bff;
-    border-radius: 30px;
-    background-image: linear-gradient(#98daf8,#27b9e5,#2b5ccf);
-    transition: background-image 0.3s ease-in-out;
-    
-}
-
-.weather:hover {
-    background-image: #c7f2f6;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    padding: 15px 20px; /* Reduced padding */
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    margin-bottom: 25px;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1); /* Optional soft inner shadow */
+    transition: all 0.3s ease;
 }
 
 .weather h2 {
-    font-size: 2em;
+    font-size: 1.6em; /* Slightly smaller title */
+    font-weight: 600;
     margin-bottom: 10px;
-    color: #fff;
-    font-weight: bold;
-    text-align: center;
 }
 
-.weather .con{
-    margin-top: 10px;
-    justify-content: space-between;
+.weather img {
+    width: 60px; /* Smaller icon */
+    height: auto;
+    margin: 8px 0;
+}
+
+.weather .con {
     display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 0 10px;
 }
-
 
 .weather p {
-    font-size: 1.2em;
+    font-size: 0.95em; /* Compact text */
     margin: 5px 0;
-    text-align: center;
-    color: #fff;
 }
 
-/* Forecast section styling */
+/* Forecast Section */
 .forecast {
-    margin: 20px 0;
+    margin-top: 20px;
 }
 
 .forecast h2 {
-    font-size: 2em;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #fff;
+    font-size: 1.8em;
+    color: #344861;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-
-.forecast .p{
-    font-weight: bold;
-}
-
-.forecast .list-group-item {
-    margin-bottom: 10px;
+.list-group-item {
+    background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+    border-radius: 12px;
     padding: 15px;
-    background-image:linear-gradient(#aaebee,#6d77a8);
-    border-radius: 30px;
-    border: 1px solid #007bff;
-    transition: background-color 0.3s ease-in-out;
-    
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
 }
 
-.forecast .list-group-item:hover {
-    background-color: #c7f2f6;
+.list-group-item:hover {
+    transform: scale(1.02);
 }
 
-.forecast .list-group-item p {
-    font-size: 1.2em;
+.list-group-item p {
     margin: 5px 0;
+    font-size: 1.1em;
+    color: #333;
 }
 
-/* Additional styles for better readability */
-p strong {
-    color: #fff;
+.list-group-item img {
+    width: 60px;
+    height: auto;
 }
 
-/* Media queries for responsiveness */
+/* Media Queries */
 @media (max-width: 600px) {
-    .container {
-        padding: 15px;
-    }
-
-    form {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    form .form-group {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-
-    form .form-control, form .btn {
+    .form-control {
         width: 100%;
     }
+
+    .weather .con {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+}
+
+.forecast .card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+}
+
+.card-body p {
+    font-size: 14px; /* Decrease font size */
+    font-weight: 400; /* Normal weight */
+    margin: 5px 0;
+    color: #333; /* Softer color */
+}
+
+.card-body p:first-child {
+    font-size: 12px; /* Smaller for date/time */
+    font-weight: 500;
+    color: #555;
+}
+
+.card-body p:nth-child(3) {
+    font-size: 15px; /* Weather condition */
+    font-weight: 500;
+    color: #444;
+}
+
+.card-body p:last-child {
+    font-size: 16px; /* Temperature */
+    font-weight: 600;
+    color: #111;
+}
+
+.temp {
+    font-size: 2em; /* Adjust temp display size */
+    font-weight: 600;
+    margin: 10px 0;
 }

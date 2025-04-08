@@ -6,11 +6,12 @@
     <title>Weatherhood</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+    <link rel="stylesheet" href="{% static 'app.css?v=2' %}">
+    <!-- <style>
         body { font-family: Arial, sans-serif; }
         .weather, .forecast { margin: 20px 0; }
         .container { max-width: 600px; margin: auto; padding: 20px; }
-    </style>
+    </style> -->
 </head>
 <body>
     <div class="container">
@@ -30,7 +31,7 @@
                 </p>
                 
 
-                <h2><strong></strong> {{ weather.main.temp|floatformat:"0"  }} &deg;C</h2>
+                <h2 class="temp">{{ weather.main.temp|floatformat:"0"  }} &deg;C</h2>
                 <br>
                 
                 
@@ -42,17 +43,19 @@
             </div>
             <div class="forecast">
                 <h2>5-Day Forecast</h2>
-                <div class="list-group">
+                <div class="d-flex flex-row flex-nowrap overflow-auto" style="gap: 15px;">
                     {% for forecast in forecast.list %}
-                        <div class="list-group-item">
-                            <p><strong>{{ forecast.dt_txt}}</strong></p>
-                            <p><img src="http://openweathermap.org/img/wn/{{ forecast.weather.0.icon }}@2x.png" alt="{{ forecast.description }}">
-                            <p><strong>{{forecast.weather.0.main}}</strong></p>
-                            <p ><strong>{{ forecast.main.temp }} &deg;C</strong></p>
+                        <div class="card text-center flex-shrink-0" style="min-width: 160px;">
+                            <div class="card-body">
+                                <p><strong>{{ forecast.dt_txt }}</strong></p>
+                                <img src="http://openweathermap.org/img/wn/{{ forecast.weather.0.icon }}@2x.png" alt="{{ forecast.description }}">
+                                <p><strong>{{ forecast.weather.0.main }}</strong></p>
+                                <p><strong>{{ forecast.main.temp }} &deg;C</strong></p>
+                            </div>
                         </div>
                     {% endfor %}
                 </div>
-            </div>
+            </div>            
         {% endif %}
     </div>
 
